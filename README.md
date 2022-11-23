@@ -8,38 +8,39 @@
 
 ### 2. Prepare data
 
-Please go to ["./dataset/README.md"](datasets/README.md) for details, or please send an Email to 2981431354@mail.dlut.edu.cn to request the preprocessed data. If you would like to use the preprocessed data, please use it for research purposes and do not redistribute it.
+Please use split.py to split the images first, and use bimap.py, deal.py and check.py to make the images become binary images.
 
 ### 3. Environment
 
-Please prepare an environment with python=3.7, and then use the command "pip install -r requirements.txt" for the dependencies.
+Please prepare an environment with python=3.7, opencv, torch and torchvision. And then when running the program, it reminds you to install whatever library you need.
 
 ### 4. Train/Test
 
-- Run the train script on synapse dataset. The batch size can be reduced to 12 or 6 to save memory (please also decrease the base_lr linearly), and both can reach similar performance.
+- If you want to try the model, you can directly use the train.py.
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python train.py --dataset Synapse --vit_name R50-ViT-B_16
+CUDA_VISIBLE_DEVICES=0 python train.py
 ```
 
-- Run the test script on synapse dataset. It supports testing for both 2D images and 3D volumes.
+- If you want to use the ssim and iou loss function with crossEntropy loss funtion together, you just need to remove comment in train.py(below the crossEntropy loss) and add the loss operation in loss calculation place.
+- Especially, when you calculate the iou loss, you need to convert the images(convert 0->1, 1->0). Because the image pixels values are mostly 0, and it will influence the iou loss calculation(Based on iou loss characteristic).
 
+- If you want to obtain the result, you can directly use the test.py.
 ```bash
-python test.py --dataset Synapse --vit_name R50-ViT-B_16
+python test.py 
 ```
 
 ## Reference
-* [Google ViT](https://github.com/google-research/vision_transformer)
-* [ViT-pytorch](https://github.com/jeonsworld/ViT-pytorch)
-* [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch)
+* [Swin Transformer](https://github.com/microsoft/Swin-Transformer)
+
 
 ## Citations
 
 ```bibtex
 @
-  title={Swin Ynet},
-  author={Tianyu Yan, Fuzi Wan},
-  journal={投哪一篇呢嘿嘿},
+  title={Fully Transformer Network for Change Detection of Remote  Sensing Images},
+  author={Tianyu Yan, Fuzi Wan, Pingping Zhang},
+  journal={ACCV},
   year={2022}
 }
 ```
