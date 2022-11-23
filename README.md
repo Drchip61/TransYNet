@@ -2,13 +2,9 @@
 
 ## Usage
 
-### 1. Download Google pre-trained ViT models
-* [Get models in this link](https://console.cloud.google.com/storage/vit_models/): R50-ViT-B_16, ViT-B_16, ViT-L_16...
-```bash
-wget https://storage.googleapis.com/vit_models/imagenet21k/{MODEL_NAME}.npz &&
-mkdir ../model/vit_checkpoint/imagenet21k &&
-mv {MODEL_NAME}.npz ../model/vit_checkpoint/imagenet21k/{MODEL_NAME}.npz
-```
+### 1. Download pre-trained Swin Transformer models
+* [Get models in this link](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224_22kto1k.pth):SwinB pretrain in ImageNet22K 
+
 
 ### 2. Prepare data
 
