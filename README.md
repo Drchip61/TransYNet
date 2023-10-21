@@ -1,4 +1,4 @@
-# Fully-Transformer-Network-for-Change-Detection-of-Remote-Sensing-Images
+# TransY-Net Learning Fully-Transformer-Network-for-Change-Detection-of-Remote-Sensing-Images
 
 ## Usage
 
