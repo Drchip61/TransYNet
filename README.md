@@ -39,8 +39,8 @@ python test.py
 ```bibtex
 @
   title={Trans Y-Net Learning Fully Transformer Network for Change Detection of Remote  Sensing Images},
-  author={Tianyu Yan, Fuzi Wan, Pingping Zhang},
-  journal={ACCV},
-  year={2022}
+  author={Tianyu Yan, Fuzi Wan, Pingping Zhang，Gong Cheng，Huchaun LU},
+  journal={IEEE Transactions on Geoscience Remote Sensing},
+  year={2023}
 }
 ```
